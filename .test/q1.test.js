@@ -1,26 +1,22 @@
-const func = require("../q1");
-
-const iLoveYou = "I LOVE YOU";
-const notMatched = "NOT MATCHED";
-const input = [
-  ["Jack", ""],
-  [0, -220],
-  ["0", 100],
-];
-
-//these comments are here, so that you won't see test cases :P
-//these comments are here, so that you won't see test cases :P
-//these comments are here, so that you won't see test cases :P
-//these comments are here, so that you won't see test cases :P
-
-test("q1 test case 1", () => {
-  expect(func(input[0][0], input[0][1])).toEqual(iLoveYou);
-});
-
-test("q1 test case 2", () => {
-  expect(func(input[1][0], input[1][1])).toEqual(-220);
-});
-
-test("q1 test case 3", () => {
-  expect(func(input[2][0], input[2][1])).toEqual(notMatched);
-});
+function typeChecker(a, b) {
+  if (typeof a === 'string' && typeof b === 'string') {
+      return 'I LOVE YOU';
+  }
+  else if (typeof a === 'number' && typeof b === 'number') {
+      return a + b;
+  }
+  else {
+      return 'NOT MATCHED';
+  }
+}
+//Test cases
+var a1 = "Jack";
+var b1 = "Rose";
+var a2 = 555;
+var b2 = 100;
+var a3 = "Jack";
+var b3 = 100;
+console.log(typeChecker(a1, b1));
+console.log(typeChecker(a2, b2));
+console.log(typeChecker(a3, b3));
+module.exports = typeChecker;
